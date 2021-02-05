@@ -59,10 +59,8 @@ export default function ProjectScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Project</Text>
-            <Draggable onPressIn={() => console.log('pressin')}
-                       onPressOut={() => console.log('pressout')}
-                       onDragRelease={() => console.log('dragrelease')}
-                       onShortPressRelease={() => console.log('onShortPressRelease')}
+            <Draggable
+                       onLongPress={() => console.log('longPress')}
                        x={100} y={200} renderColor='grey' renderText='B'></Draggable>
             <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
            {/* <EditScreenInfo path="/screens/Project.tsx" />
