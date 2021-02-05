@@ -12,7 +12,7 @@ export default function TabOneScreen() {
     Animated.timing(fadeAnim, {
       useNativeDriver: false,
       toValue: 1,
-      duration: 5000
+      duration: 1000
     }).start();
   };
 
@@ -21,7 +21,7 @@ export default function TabOneScreen() {
     Animated.timing(fadeAnim, {
       useNativeDriver: false,
       toValue: 0,
-      duration: 5000
+      duration: 1000
     }).start();
   };
 
