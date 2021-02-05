@@ -7,7 +7,8 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import ProjectScreen from '../screens/ProjectScreen'
+import {BottomTabParamList, ProjectParamList, TabOneParamList, TabTwoParamList} from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -22,16 +23,23 @@ export default function BottomTabNavigator() {
         name="Home"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="AboutMe"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-person" color={color} />,
         }}
       />
+        <BottomTab.Screen
+            name="Project"
+            component={ProjectNavigator}
+            options={{
+                tabBarIcon: ({ color }) => <TabBarIcon name="ios-list" color={color} />,
+            }}
+        />
     </BottomTab.Navigator>
   );
 }
@@ -39,7 +47,7 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <Ionicons size={30} style={{ marginBottom: -3, marginHorizontal: -10 }} {...props} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
@@ -70,4 +78,18 @@ function TabTwoNavigator() {
       />
     </TabTwoStack.Navigator>
   );
+}
+
+const ProjectStack = createStackNavigator<ProjectParamList>();
+
+function ProjectNavigator() {
+    return (
+      <ProjectStack.Navigator>
+          <ProjectStack.Screen
+              name="ProjectScreen"
+              component={ProjectScreen}
+              options={{ headerTitle:'Project'}}
+              />
+      </ProjectStack.Navigator>
+    );
 }

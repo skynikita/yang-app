@@ -16,6 +16,11 @@ export default {
               TabTwoScreen: 'two',
             },
           },
+          Project: {
+            screens: {
+              ProjectScreen: 'three',
+            },
+          },
         },
       },
       NotFound: '*',
