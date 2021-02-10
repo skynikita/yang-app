@@ -18,6 +18,8 @@ export default function ProjectScreen() {
         PanResponder.create({
             onMoveShouldSetPanResponder: () => true,
             onPanResponderGrant: () => {
+                // @ts-ignore
+                // @ts-ignore
                 pan.setOffset({
                     x: pan.x._value,
                     y: pan.y._value

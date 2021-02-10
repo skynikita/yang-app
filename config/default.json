@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://yangluo1105:yangluo1105@yang-expo.6dzdi.mongodb.net/yang-expo?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
+}
