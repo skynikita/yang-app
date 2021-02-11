@@ -1,15 +1,15 @@
 import React, {useRef} from 'react';
 import {Animated, Button, StyleSheet,Image, PanResponder} from 'react-native';
 import Draggable from 'react-native-draggable';
-
 import Swiper from 'react-native-swiper';
 // @ts-ignore
 import ViewControl from 'react-native-zoom-view';
-
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator} from "@react-navigation/stack";
 
-export default function ProjectScreen() {
+export default function ProjectScreen({navigation}) {
     const fadeAnim = useRef(new Animated.Value(0)).current;
 
     const pan = useRef(new Animated.ValueXY()).current
@@ -63,7 +63,7 @@ export default function ProjectScreen() {
             <Text style={styles.title}>Project</Text>
             <Draggable
                        onLongPress={() => console.log('longPress')}
-                       x={100} y={200} renderColor='grey' renderText='B'></Draggable>
+                       x={100} y={200} renderColor='grey' renderText='B'/>
             <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
            {/* <EditScreenInfo path="/screens/Project.tsx" />
             <Animated.View

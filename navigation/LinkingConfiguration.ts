@@ -21,6 +21,11 @@ export default {
               ProjectScreen: 'three',
             },
           },
+          Test: {
+            screens: {
+              TestScreen: 'four',
+            },
+          },
         },
       },
       NotFound: '*',

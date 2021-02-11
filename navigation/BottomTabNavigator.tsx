@@ -8,13 +8,15 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import ProjectScreen from '../screens/ProjectScreen'
-import {BottomTabParamList, ProjectParamList, TabOneParamList, TabTwoParamList} from '../types';
+import TestScreen from "../screens/TestScreen";
+import {BottomTabParamList, ProjectParamList, TabOneParamList, TabTwoParamList,TestParamList} from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
+    // @ts-ignore
     return (
     <BottomTab.Navigator
       initialRouteName="Home"
@@ -38,6 +40,13 @@ export default function BottomTabNavigator() {
             component={ProjectNavigator}
             options={{
                 tabBarIcon: ({ color }) => <TabBarIcon name="ios-list" color={color} />,
+            }}
+        />
+        <BottomTab.Screen
+            name="Test"
+            component={TestNavigator}
+            options={{
+                tabBarIcon: ({ color }) => <TabBarIcon name="ios-alert-sharp" color={color} />,
             }}
         />
     </BottomTab.Navigator>
@@ -91,5 +100,18 @@ function ProjectNavigator() {
               options={{ headerTitle:'Project'}}
               />
       </ProjectStack.Navigator>
+    );
+}
+const TestStack = createStackNavigator<TestParamList>();
+
+function TestNavigator() {
+    return (
+        <TestStack.Navigator>
+            <TestStack.Screen
+                name="TestScreen"
+                component={TestScreen}
+                options={{ headerTitle:'Test'}}
+            />
+        </TestStack.Navigator>
     );
 }

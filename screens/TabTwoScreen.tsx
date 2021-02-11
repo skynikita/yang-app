@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator} from "@react-navigation/stack";
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-export default function TabTwoScreen() {
+export default function TabTwoScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>About Me</Text>
